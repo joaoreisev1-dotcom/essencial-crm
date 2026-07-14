@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Filament\Resources\Clientes;
-
+use UnitEnum;
 use App\Filament\Resources\Clientes\Pages\CreateCliente;
 use App\Filament\Resources\Clientes\Pages\EditCliente;
 use App\Filament\Resources\Clientes\Pages\ListClientes;
@@ -16,9 +16,20 @@ use Filament\Tables\Table;
 
 class ClienteResource extends Resource
 {
-    protected static ?string $model = Cliente::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static ?string $navigationLabel = 'Clientes';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Relacionamentos';
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
+
+    protected static ?int $navigationSort = 1;
+
+    protected static ?string $modelLabel = 'Cliente';
+
+    protected static ?string $pluralModelLabel = 'Clientes';
+
+    protected static ?string $model = Cliente::class;
 
     protected static ?string $recordTitleAttribute = 'nome';
 
